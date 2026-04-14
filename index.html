@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawan Kumar | Data Analyst Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 50px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+.skills span {
+  background: #1e293b;
+  padding: 10px 15px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: #38bdf8;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
+}
+
+canvas {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);} 
+  to {opacity: 1; transform: translateY(0);} 
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Pawan Kumar</h1>
+  <p>Data Analyst | Web Developer</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>I am a passionate Data Analyst skilled in Python, SQL, and visualization tools. I love turning data into insights.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>SQL</span>
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>JavaScript</span>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Sales Dashboard</h3>
+      <p>Analyzed sales trends using Python and Power BI.</p>
+    </div>
+    <div class="card">
+      <h3>Customer Churn Analysis</h3>
+      <p>Predicted customer churn using ML models.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Data Dashboard</h2>
+  <div class="dashboard">
+    <canvas id="chart1"></canvas>
+    <canvas id="chart2"></canvas>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pawan Kumar</p>
+</footer>
+
+<script>
+new Chart(document.getElementById('chart1'), {
+  type: 'bar',
+  data: {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+    datasets: [{
+      label: 'Sales',
+      data: [12, 19, 8, 15]
+    }]
+  }
+});
+
+new Chart(document.getElementById('chart2'), {
+  type: 'line',
+  data: {
+    labels: ['Week1', 'Week2', 'Week3', 'Week4'],
+    datasets: [{
+      label: 'Users',
+      data: [50, 80, 60, 100]
+    }]
+  }
+});
+</script>
+
+</body>
+</html>
