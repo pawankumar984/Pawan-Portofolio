@@ -3,159 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawan Kumar | Portfolio</title>
+<title>Pawan Kumar | AI & Data Analyst</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <style>
-body { margin:0; font-family:'Poppins',sans-serif; background:#020617; color:white; }
+body{margin:0;font-family:'Poppins',sans-serif;background:#020617;color:white;overflow-x:hidden}
+canvas#bg{position:fixed;top:0;left:0;z-index:-1}
 
-nav {
-  position:fixed; width:100%; top:0; display:flex; justify-content:space-between;
-  padding:15px 40px; background:rgba(0,0,0,0.5); backdrop-filter:blur(10px);
-}
+nav{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px)}
+nav a{color:white;text-decoration:none;margin:0 10px}
 
-nav a { color:white; text-decoration:none; margin:0 10px; }
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+header h1{font-size:55px}
+.typing{font-size:22px;border-right:3px solid white;white-space:nowrap;overflow:hidden}
 
-header {
-  height:100vh; display:flex; flex-direction:column; justify-content:center;
-  align-items:center; background:linear-gradient(135deg,#4f46e5,#06b6d4);
-  text-align:center;
-}
+section{padding:80px 20px;max-width:1100px;margin:auto}
+h2{color:#38bdf8}
 
-header img {
-  width:140px; border-radius:50%; margin-bottom:20px;
-  border:3px solid white;
-}
+.card{background:#1e293b;padding:20px;border-radius:15px;margin:10px 0;transition:.4s}
+.card:hover{transform:scale(1.05)}
 
-header h1 { font-size:55px; margin:10px 0; }
+.skills span{background:#1e293b;padding:10px;margin:5px;border-radius:10px;display:inline-block}
 
-.typing { font-size:22px; border-right:3px solid white; white-space:nowrap; overflow:hidden; }
-
-.btn {
-  margin-top:20px; padding:12px 25px; background:#38bdf8;
-  border-radius:8px; color:black; text-decoration:none;
-}
-
-section { padding:80px 20px; max-width:1100px; margin:auto; }
-
-h2 { color:#38bdf8; margin-bottom:20px; }
-
-.skills span {
-  background:#1e293b; padding:10px 15px; margin:5px; display:inline-block;
-  border-radius:10px; transition:.3s;
-}
-.skills span:hover { background:#38bdf8; }
-
-.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-
-.card {
-  background:#1e293b; padding:20px; border-radius:15px;
-  transition:.4s;
-}
-.card:hover { transform:translateY(-10px) scale(1.02); }
-
-.dashboard { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
-canvas { background:#1e293b; padding:15px; border-radius:15px; }
-
-.contact a {
-  display:inline-block; margin:10px; padding:10px 20px;
-  background:#38bdf8; color:black; border-radius:8px; text-decoration:none;
-}
-
-footer { text-align:center; padding:20px; background:#020617; }
+footer{text-align:center;padding:20px}
 </style>
 </head>
 
 <body>
+<canvas id="bg"></canvas>
 
 <nav>
-  <div>Pawan</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+<div>Pawan Kumar</div>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <header>
-  <img src="https://i.pravatar.cc/150" alt="profile">
-  <h1>Pawan Kumar</h1>
-  <div class="typing" id="typing"></div>
-  <a href="#contact" class="btn">Hire Me</a>
+<h1>Pawan Kumar</h1>
+<div class="typing" id="typing"></div>
+<p>Turning Data into Intelligence 🚀</p>
 </header>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>I am a professional Data Analyst skilled in Python, SQL, Power BI and dashboard development. I build real-world data solutions.</p>
+<h2>About Me</h2>
+<p>
+Hi, I’m Pawan Kumar — a Computer Science (AI/ML) student and Data Analyst.
+I don’t just analyze data, I solve real-world problems using AI, Machine Learning, and Business Intelligence.
+My goal is simple: build solutions that companies can actually use to grow.
+</p>
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span><span>JavaScript</span>
-  </div>
+<h2>Skills</h2>
+<div class="skills">
+<span>Python</span><span>SQL</span><span>Machine Learning</span><span>Power BI</span><span>AI</span>
+</div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card"><h3>Sales Dashboard</h3><p>Power BI dashboard with KPIs.</p></div>
-    <div class="card"><h3>Churn Prediction</h3><p>ML model using Python.</p></div>
-    <div class="card"><h3>Web Portfolio</h3><p>Modern animated portfolio.</p></div>
-  </div>
+<h2>AI Projects</h2>
+
+<div class="card">
+<h3>Customer Churn AI Model</h3>
+<p>Built ML model predicting churn with 85% accuracy using Python.</p>
+<p>Impact: Helps companies retain customers and increase revenue.</p>
+</div>
+
+<div class="card">
+<h3>Sales Prediction Dashboard</h3>
+<p>Used data analysis + visualization to predict sales trends.</p>
+<p>Impact: Improved business decision making.</p>
+</div>
+
+<div class="card">
+<h3>AI Voice Analysis Project</h3>
+<p>Integrated real-time audio with ML prediction.</p>
+<p>Impact: Smart AI-based decision system.</p>
+</div>
+
 </section>
 
-<section>
-  <h2>Data Dashboard</h2>
-  <div class="dashboard">
-    <canvas id="chart1"></canvas>
-    <canvas id="chart2"></canvas>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <a href="#">pawan-kumar-442699299</a>
-  <a href="#">pawankumar984</a>
-  <a href="#">pawantiwari836896@gmail.com</a>
+<section id="contact">
+<h2>Hire Me</h2>
+<p>I am open for Data Analyst / AI roles.</p>
 </section>
 
 <footer>
-  <p>© 2026 Pawan Kumar</p>
+<p>© 2026 Pawan Kumar</p>
 </footer>
 
 <script>
-const text=["Data Analyst","Web Developer","Power BI Expert"];
+// Typing
+const text=["AI Engineer","Data Analyst","ML Developer"];
 let i=0,j=0,current="",isDeleting=false;
 function type(){
 current=text[i];
-if(!isDeleting){
-document.getElementById("typing").textContent=current.substring(0,j++);
-if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}
-}else{
-document.getElementById("typing").textContent=current.substring(0,j--);
-if(j===0){isDeleting=false;i=(i+1)%text.length;}
-}
+if(!isDeleting){document.getElementById("typing").textContent=current.substring(0,j++);
+if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}}
+else{document.getElementById("typing").textContent=current.substring(0,j--);
+if(j===0){isDeleting=false;i=(i+1)%text.length;}}
 setTimeout(type,100);
 }
 type();
 
-new Chart(document.getElementById('chart1'),{
-type:'bar',data:{labels:['Jan','Feb','Mar','Apr'],datasets:[{label:'Sales',data:[12,19,8,15]}]}
-});
+// 3D Background (Three.js)
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg')});
+renderer.setSize(window.innerWidth,window.innerHeight);
 
-new Chart(document.getElementById('chart2'),{
-type:'line',data:{labels:['W1','W2','W3','W4'],datasets:[{label:'Users',data:[50,80,60,100]}]}
-});
+const geometry=new THREE.TorusGeometry(10,3,16,100);
+const material=new THREE.MeshBasicMaterial({color:0x38bdf8,wireframe:true});
+const torus=new THREE.Mesh(geometry,material);
+scene.add(torus);
 
-gsap.from("nav",{y:-50,opacity:0,duration:1});
-gsap.from("header img",{scale:0,opacity:0,duration:1});
-gsap.from(".card",{y:50,opacity:0,stagger:0.2});
+camera.position.z=30;
+
+function animate(){
+requestAnimationFrame(animate);
+torus.rotation.x+=0.01;
+torus.rotation.y+=0.01;
+renderer.render(scene,camera);
+}
+animate();
 </script>
 
 </body>
 </html>
+
 
