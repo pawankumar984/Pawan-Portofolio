@@ -3,31 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawan Kumar | AI & Data Analyst</title>
+<title>Pawan Kumar | AI Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
 body{margin:0;font-family:'Poppins',sans-serif;background:#020617;color:white;overflow-x:hidden}
 canvas#bg{position:fixed;top:0;left:0;z-index:-1}
 
-nav{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px)}
+nav{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px)}
 nav a{color:white;text-decoration:none;margin:0 10px}
 
 header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-header h1{font-size:55px}
-.typing{font-size:22px;border-right:3px solid white;white-space:nowrap;overflow:hidden}
+header h1{font-size:60px}
+.typing{font-size:24px;border-right:3px solid white;white-space:nowrap;overflow:hidden}
+.btn{margin-top:20px;padding:12px 25px;background:#38bdf8;color:black;border-radius:8px;text-decoration:none}
 
 section{padding:80px 20px;max-width:1100px;margin:auto}
 h2{color:#38bdf8}
 
-.card{background:#1e293b;padding:20px;border-radius:15px;margin:10px 0;transition:.4s}
-.card:hover{transform:scale(1.05)}
+.card{background:#1e293b;padding:20px;border-radius:15px;margin:15px 0;transition:.4s}
+.card:hover{transform:translateY(-10px) scale(1.05)}
 
 .skills span{background:#1e293b;padding:10px;margin:5px;border-radius:10px;display:inline-block}
+
+form input,form textarea{
+  width:100%;padding:12px;margin:10px 0;border:none;border-radius:8px;
+}
+form button{
+  padding:12px 20px;background:#38bdf8;border:none;border-radius:8px;color:black;
+}
 
 footer{text-align:center;padding:20px}
 </style>
@@ -48,22 +55,23 @@ footer{text-align:center;padding:20px}
 <header>
 <h1>Pawan Kumar</h1>
 <div class="typing" id="typing"></div>
-<p>Turning Data into Intelligence 🚀</p>
+<p>Building AI Solutions that Companies Need 🚀</p>
+<a href="#contact" class="btn">Hire Me</a>
 </header>
 
 <section id="about">
 <h2>About Me</h2>
 <p>
-Hi, I’m Pawan Kumar — a Computer Science (AI/ML) student and Data Analyst.
-I don’t just analyze data, I solve real-world problems using AI, Machine Learning, and Business Intelligence.
-My goal is simple: build solutions that companies can actually use to grow.
+I am Pawan Kumar, an aspiring AI Engineer and Data Analyst.
+I specialize in Machine Learning, Data Analytics, and building intelligent systems that solve real-world problems.
+I focus on delivering results that impact business growth.
 </p>
 </section>
 
 <section>
 <h2>Skills</h2>
 <div class="skills">
-<span>Python</span><span>SQL</span><span>Machine Learning</span><span>Power BI</span><span>AI</span>
+<span>Python</span><span>SQL</span><span>Machine Learning</span><span>Deep Learning</span><span>Power BI</span>
 </div>
 </section>
 
@@ -71,28 +79,36 @@ My goal is simple: build solutions that companies can actually use to grow.
 <h2>AI Projects</h2>
 
 <div class="card">
-<h3>Customer Churn AI Model</h3>
-<p>Built ML model predicting churn with 85% accuracy using Python.</p>
-<p>Impact: Helps companies retain customers and increase revenue.</p>
+<h3>Customer Churn Prediction</h3>
+<p>85% accurate ML model to identify customer drop-off risk.</p>
+<p>Impact: Improved retention strategy.</p>
 </div>
 
 <div class="card">
-<h3>Sales Prediction Dashboard</h3>
-<p>Used data analysis + visualization to predict sales trends.</p>
-<p>Impact: Improved business decision making.</p>
+<h3>AI Voice Recognition</h3>
+<p>Real-time voice analysis using ML.</p>
+<p>Impact: Smart automation system.</p>
 </div>
 
 <div class="card">
-<h3>AI Voice Analysis Project</h3>
-<p>Integrated real-time audio with ML prediction.</p>
-<p>Impact: Smart AI-based decision system.</p>
+<h3>Sales Forecasting Model</h3>
+<p>Predicted future sales using data trends.</p>
+<p>Impact: Better business decisions.</p>
 </div>
 
 </section>
 
 <section id="contact">
-<h2>Hire Me</h2>
-<p>I am open for Data Analyst / AI roles.</p>
+<h2>Contact / Hire Me</h2>
+<p>Ready to contribute as AI Engineer / Data Analyst.</p>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
 </section>
 
 <footer>
@@ -101,7 +117,7 @@ My goal is simple: build solutions that companies can actually use to grow.
 
 <script>
 // Typing
-const text=["AI Engineer","Data Analyst","ML Developer"];
+const text=["AI Engineer","Machine Learning Expert","Data Analyst"];
 let i=0,j=0,current="",isDeleting=false;
 function type(){
 current=text[i];
@@ -113,29 +129,32 @@ setTimeout(type,100);
 }
 type();
 
-// 3D Background (Three.js)
+// 3D Background
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg')});
 renderer.setSize(window.innerWidth,window.innerHeight);
 
-const geometry=new THREE.TorusGeometry(10,3,16,100);
+const geometry=new THREE.IcosahedronGeometry(10,1);
 const material=new THREE.MeshBasicMaterial({color:0x38bdf8,wireframe:true});
-const torus=new THREE.Mesh(geometry,material);
-scene.add(torus);
+const shape=new THREE.Mesh(geometry,material);
+scene.add(shape);
 
-camera.position.z=30;
+camera.position.z=25;
 
 function animate(){
 requestAnimationFrame(animate);
-torus.rotation.x+=0.01;
-torus.rotation.y+=0.01;
+shape.rotation.x+=0.01;
+shape.rotation.y+=0.01;
 renderer.render(scene,camera);
 }
 animate();
+
+// GSAP Animations
+gsap.from("header h1",{y:-50,opacity:0,duration:1});
+gsap.from(".card",{y:50,opacity:0,stagger:0.2});
 </script>
 
 </body>
 </html>
-
 
